@@ -9,7 +9,7 @@ A web application for saving and retrieving cat details.
  <li> <a href="#point_5">Authors</a>
 </ol>
 
-<p id="point_1"> 1. Getting started with the Application
+<p id="point_1"> <h2>Getting started with the Application</h2>
 <p> <h3>Prerequisites </h3> </p>
        <ol>
        <li> A running version of Node.js. Check this <a href = "https://nodejs.org/en/download/package-manager/"> link </a> for instructions for installation of Node.js
@@ -146,3 +146,5 @@ Error 400: If there are no records in the database
 
 ```
 </p>
+<p id="point_3"> <h2> Deployment </h2> </p>
+<p id="point_4"> <h2> Authors </h2> </p>
