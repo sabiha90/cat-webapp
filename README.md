@@ -144,7 +144,7 @@ An API endpoint to login with an username and password.
 </p>
 <p id="point_3"> <h2> Deployment </h2> </p>
 Deployed using <a href="https://docs.aws.amazon.com/quickstarts/latest/webapp/welcome.html?icmpid=docs_eb_console_new"> Amazon ElasticBeanstalk </a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html"> RDS </a>
-<li> Url: 
+<li> Url: http://catwebapp-env.szdwfbyehu.us-east-1.elasticbeanstalk.com/
 
 <p id="point_4"> <h2> Built With </h2> </p>
 <li> jsonwebtoken: To generate AuthToken
