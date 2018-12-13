@@ -35,7 +35,7 @@ The documentation consists of:
  <a href = "#api_4"><h3> GET /cats/random </h3> </a>
 
 <p id="api_1">  <h3> POST /cat/register </h3> </p>
-<a href="#"> https://www.xyz.com/cat/register </a>
+<br>Usage:<a href="#"> https://www.xyz.com/cat/register </a>
 <br>
 An API endpoint to save the details of cat in the database.
 <br>Parameters sent with the POST request:
@@ -58,7 +58,7 @@ Success :
 
 </p>
 
-<p id ="api_2"> <h3> POST /cat/login </h3>
+<p id ="api_2"> <h4> POST /cat/login </h3>
 <br>Usage: <a href="#"> https://www.xyz.com/cat/login</a>
 <br>
 <p>An API endpoint to login with an username and password.</p>
@@ -95,7 +95,7 @@ Required:
     "failed": "No user with this name!"
 }
  ```
-<p id ="api_3"> <h3> GET /cats </h3>
+<p id ="api_3"> <h4> GET /cats </h4>
 An API endpoint to get an array of cats (birthdate,breed, username, id, imageUrl, name) matching that criteria, sorted by lastSeenAt.
 Usage: <a href="#"> https://www.xyz.com/cats</a>
 Parameters:
@@ -111,7 +111,7 @@ Parameters:
  
 </p>
 
-<p id ="api_4"> <h3> GET /cats/random </h3>
+<p id ="api_4"><h4> GET /cats/random </h4>
 Usage: <a href="#"> https://www.xyz.com/cats/random </a>
 <br>No parameters required
 Success 201: Display details of a random cat
