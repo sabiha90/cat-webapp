@@ -41,7 +41,7 @@ A web application for saving and retrieving cat details.
 Usage:<a href="#"> https://www.xyz.com/cat/register </a>
 <br>
 An API endpoint to save the details of cat in the database.
-<br>Parameters sent with the POST request:
+<br>POST request parameters
 <br>Required:
 <ul>
  <li>name: String
@@ -66,16 +66,17 @@ Usage: <a href="#"> https://www.xyz.com/cat/login</a>
 <p>An API endpoint to login with an username and password.</p>
 <p>It will return an Auth Token and update the lastSeenAt field of the database.</p>
 <br>
-Parameters sent with the POST request:
+POST request parameters
 <br>
-Required:
+<br>Required
 <br>
 <ul>
  <li> username: String
  <li> password: String
  </ul>
+ Response:
  
- Sucess 201: Successful Login 
+   <li>Sucess 201: Successful Login 
  ```
  {
     "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDQ3MzE3MDYsImV4cCI6MTU0NDgxODEwNn0.VwFW8T8FE7JAXLU_nT9gZ2xOh1L7NKFUqaw4-NlB61M",
@@ -83,14 +84,14 @@ Required:
     "success": "updated sucessfully"
 }
  ```
- Error 401: Incorrect password
+ <li>Error 401: Incorrect password
  ```
  {
     "code": 401,
     "failed": "Incorrect password!"
 }
  ```
- Error 401: No user with this username 
+ <li>Error 401: No user with this username 
   ```
  {
     "code": 401,
@@ -114,7 +115,7 @@ Usage: <a href="#"> https://www.xyz.com/cats/random</a>
 
 <br>No parameters required.
 
-<br>Success 201: Display details of a random cat
+<li>Success 201: Display details of a random cat
 
 ```
 {
@@ -130,14 +131,16 @@ Usage: <a href="#"> https://www.xyz.com/cats/random</a>
 
 ```
 
-Error 500: If unable to connect to the database or there is a syntax error in the mysql query
+<li>Error 500: If unable to connect to the database or there is a syntax error in the mysql query
+
 ```
 {
     "Failure": 500,
     "Error": "An error occurred"
 }
 ```
-Error 400: If there are no records in the database
+<li>Error 400: If there are no records in the database
+
 ```
 {
     "Failure": 400,
