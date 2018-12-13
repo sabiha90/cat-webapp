@@ -73,8 +73,7 @@ Required:
  <li> password: String
  </ul>
  
- Sucess 201:
- <br>Successful Login 
+ Sucess 201: Successful Login 
  ```
  {
     "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDQ3MzE3MDYsImV4cCI6MTU0NDgxODEwNn0.VwFW8T8FE7JAXLU_nT9gZ2xOh1L7NKFUqaw4-NlB61M",
@@ -82,16 +81,14 @@ Required:
     "success": "updated sucessfully"
 }
  ```
- Error 401:
- <br> Incorrect password
+ Error 401: Incorrect password
  ```
  {
     "code": 401,
     "failed": "Incorrect password!"
 }
  ```
- Error 401:
- <br>No user with this username 
+ Error 401: No user with this username 
   ```
  {
     "code": 401,
@@ -99,8 +96,8 @@ Required:
 }
  ```
 <p id ="api_3"> <h3> GET /cats </h3>
-
 An API endpoint to get an array of cats (birthdate,breed, username, id, imageUrl, name) matching that criteria, sorted by lastSeenAt.
+Usage: <a href="#"> https://www.xyz.com/cats</a>
 Parameters:
 <br> Optional
 <ul>
@@ -112,12 +109,12 @@ Parameters:
  
  Error:
  
- </p>
-<p id ="api_4"> <h3> GET /cats/random </h3>
-Usage: <a href="#"> https://www.xyz.com/cat/login</a>
-<br>No parameters required
-Success:
+</p>
 
+<p id ="api_4"> <h3> GET /cats/random </h3>
+Usage: <a href="#"> https://www.xyz.com/cats/random </a>
+<br>No parameters required
+Success 201: Display details of a random cat
 
 ```
 {
@@ -133,16 +130,14 @@ Success:
 
 ```
 
-Error 500: <br>
-If unable to connect to the database or there is a syntax error in the mysql query
+Error 500: If unable to connect to the database or there is a syntax error in the mysql query
 ```
 {
     "Failure": 500,
     "Error": "An error occurred"
 }
 ```
-Error 400: <br>
-If there are no records in the database
+Error 400: If there are no records in the database
 ```
 {
     "Failure": 400,
