@@ -61,7 +61,7 @@ Success :
 </p>
 
 <p id ="api_2"> <h4> POST /cat/login </h3>
-<br>Usage: <a href="#"> https://www.xyz.com/cat/login</a>
+Usage: <a href="#"> https://www.xyz.com/cat/login</a>
 <br>
 <p>An API endpoint to login with an username and password.</p>
 <p>It will return an Auth Token and update the lastSeenAt field of the database.</p>
