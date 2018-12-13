@@ -4,7 +4,7 @@ A web application for saving and retrieving cat details.
 The documentation consists of:
 <html>
 <ol>
- <li> <a href="#point_1"><h4>Getting started</h4></a></li>
+ <li> <a href="#point_1">Getting started</a>
  <li> <a href="#point_2">Description of API endpoints</a>
 </ol>
 
@@ -36,9 +36,10 @@ The documentation consists of:
 
 <p id="api_1">  <h3> POST /cat/register </h3> 
 Usage: <a href="#"> https://www.xyz.com/cat/register</a>
-API endpoint to save the details of cat in the database.
-Parameters sent with the post request:
- Required:
+<br>
+An API endpoint to save the details of cat in the database.
+Parameters sent with the POST request:
+Required:
 <ul>
  <li>name: String
  <li>password: String
@@ -52,6 +53,8 @@ Parameters sent with the post request:
  <li>breed: String?
  <li> imageUrl: String?
  </ul>
+Response:
+Success :
 
 </p>
 
@@ -59,4 +62,37 @@ Parameters sent with the post request:
 <p id ="api_2"> <h3> POST /cat/login </h3></p>
 <p id ="api_3"> <h3> GET /cats </h3></p>
 <p id ="api_4"> <h3> GET /cats/random </h3></p>
+Success:
 
+
+```
+{
+    "Success": 201,
+    "results": [
+        {
+            "imgUrl": url,
+            "name": "sb",
+            "breed": "cat_66"
+        }
+    ]
+}
+
+```
+
+Error 500: <br>
+If unable to connect to the database or there is a syntax error in the mysql query
+```
+{
+    "Failure": 500,
+    "Error": "An error occurred"
+}
+```
+Error 400: <br>
+If there are no records in the database
+```
+{
+    "Failure": 400,
+    "Error": "No records found!"
+}
+
+```
