@@ -33,7 +33,7 @@ A web application for saving and retrieving cat details.
 
 <p id="point_2"><h2> Description of API endpoints </h2> </p>
 
-<p id="api_1">  <h3> POST /cat/register </h3> </p>
+<p id="api_1">  <h4> POST /cat/register </h4> </p>
 Usage:<a href="#"> https://www.xyz.com/cat/register </a>
 <br>
 An API endpoint to save the details of cat in the database.
@@ -45,32 +45,28 @@ An API endpoint to save the details of cat in the database.
  <li>username: String
  <li>weight: Float
  </ul>
-
  Optional:
   <ul>
  <li> birthdate:Date
  <li>breed: String?
  <li> imageUrl: String?
  </ul>
-Response:
+Response
 Success :
-
 </p>
-<p id ="api_2"> <h4> POST /cat/login </h3>
+<p id ="api_2"> <h4> POST /cat/login </h4>
 Usage: <a href="#"> https://www.xyz.com/cat/login</a>
 <br>
-<p>An API endpoint to login with an username and password.</p>
-<p>It will return an Auth Token and update the lastSeenAt field of the database.</p>
-<br>
-POST request parameters
-<br>
-<br>Required
-<br>
+An API endpoint to login with an username and password.
+<br>It will return an Auth Token and update the lastSeenAt field of the database.
+<br>POST request parameters
+<br>Required:
 <ul>
- <li> username: String
- <li> password: String
+    <li> username: String
+    <li> password: String
  </ul>
- Response:
+ 
+ Response
  
    <li>Sucess 201: Successful Login 
  
