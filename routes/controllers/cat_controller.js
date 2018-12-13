@@ -5,7 +5,6 @@ var db = require('../db/db_connection');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 var config = require('../config/config');
-var rn = require('random-number');
 var Promise = require('promise');
 
 exports.home_page = function(req, res, next) {
