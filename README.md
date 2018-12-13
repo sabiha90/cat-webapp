@@ -32,10 +32,6 @@ A web application for saving and retrieving cat details.
  The application by default will run at the port 3000.
 
 <p id="point_2"><h2> Description of API endpoints </h2> </p>
- <a href = "#api_1"><h3> POST /cat/register </h3> </a>
- <a href = "#api_2"><h3> POST /cat/login </h3> </a>
- <a href = "#api_3"><h3> GET /cats </h3> </a>
- <a href = "#api_4"><h3> GET /cats/random </h3> </a>
 
 <p id="api_1">  <h3> POST /cat/register </h3> </p>
 Usage:<a href="#"> https://www.xyz.com/cat/register </a>
@@ -77,6 +73,7 @@ POST request parameters
  Response:
  
    <li>Sucess 201: Successful Login 
+ 
  ```
  {
     "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDQ3MzE3MDYsImV4cCI6MTU0NDgxODEwNn0.VwFW8T8FE7JAXLU_nT9gZ2xOh1L7NKFUqaw4-NlB61M",
@@ -85,6 +82,7 @@ POST request parameters
 }
  ```
  <li>Error 401: Incorrect password
+  
  ```
  {
     "code": 401,
@@ -92,6 +90,7 @@ POST request parameters
 }
  ```
  <li>Error 401: No user with this username 
+ 
   ```
  {
     "code": 401,
