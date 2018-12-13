@@ -9,14 +9,16 @@ The documentation consists of:
 </ol>
 
 <p id="point_1"> 1. Getting started with the Application
- Tools required to run the application
+<p> <h3>Prerequisites </h3> </p>
        <ol>
        <li> A running version of Node.js. Check this <a href = "https://nodejs.org/en/download/package-manager/"> link </a> for instructions for installation of Node.js
        <li>MySql version
    </ol>
-                                                                                                               
+<p> <h3> Running the application </h3> </p>                                                                                              
  Clone this repository into your local machine
+ 
  To install all the dependencies present in package.json, run
+ 
  ```
  npm install
  ```
@@ -104,14 +106,12 @@ Parameters:
 <li> id: String
 <li> name: String
 <li> username: String
-Success:
- 
-Error:
+</ul>
  
 </p>
 
 <p id ="api_4"><h4> GET /cats/random </h4>
-Usage: <a href="#"> https://www.xyz.com/cats/random </a>
+Usage: <a href="#"> https://www.xyz.com/cats/random</a>
 <br>No parameters required
 Success 201: Display details of a random cat
 
