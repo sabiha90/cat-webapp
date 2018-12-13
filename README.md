@@ -28,13 +28,13 @@ The documentation consists of:
  ```
  The application by default will run at the port 3000.
 
-<p id="point_2"> Description of API endpoints </p>
+<p id="point_2"><h2> Description of API endpoints </h2> </p>
  <a href = "#api_1"><h3> POST /cat/register </h3> </a>
  <a href = "#api_2"><h3> POST /cat/login </h3> </a>
  <a href = "#api_3"><h3> GET /cats </h3> </a>
  <a href = "#api_4"><h3> GET /cats/random </h3> </a>
 
-<p id="api_1">  <h3> POST /cat/register </h3> 
+<p id="api_1">  <h3> POST /cat/register </h3> </p>
 <a href="#"> https://www.xyz.com/cat/register </a>
 <br>
 An API endpoint to save the details of cat in the database.
