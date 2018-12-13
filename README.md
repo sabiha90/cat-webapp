@@ -28,18 +28,18 @@ The documentation consists of:
  ```
  The application by default will run at the port 3000.
 
- ## API Endpoints used
+<p id="point_2"> Description of API endpoints </p>
  <a href = "#api_1"><h3> POST /cat/register </h3> </a>
  <a href = "#api_2"><h3> POST /cat/login </h3> </a>
  <a href = "#api_3"><h3> GET /cats </h3> </a>
  <a href = "#api_4"><h3> GET /cats/random </h3> </a>
 
 <p id="api_1">  <h3> POST /cat/register </h3> 
-Usage: <a href="#"> https://www.xyz.com/cat/register</a>
+<a href="#"> https://www.xyz.com/cat/register </a>
 <br>
 An API endpoint to save the details of cat in the database.
-Parameters sent with the POST request:
-Required:
+<br>Parameters sent with the POST request:
+<br>Required:
 <ul>
  <li>name: String
  <li>password: String
@@ -58,10 +58,64 @@ Success :
 
 </p>
 
-<p id ="api_2"> <h3> POST /cat/login </h3></p>
-<p id ="api_2"> <h3> POST /cat/login </h3></p>
-<p id ="api_3"> <h3> GET /cats </h3></p>
-<p id ="api_4"> <h3> GET /cats/random </h3></p>
+<p id ="api_2"> <h3> POST /cat/login </h3>
+<br>Usage: <a href="#"> https://www.xyz.com/cat/login</a>
+<br>
+<p>An API endpoint to login with an username and password.</p>
+<p>It will return an Auth Token and update the lastSeenAt field of the database.</p>
+<br>
+Parameters sent with the POST request:
+<br>
+Required:
+<br>
+<ul>
+ <li> username: String
+ <li> password: String
+ </ul>
+ 
+ Sucess 201:
+ <br>Successful Login 
+ ```
+ {
+    "authToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NDQ3MzE3MDYsImV4cCI6MTU0NDgxODEwNn0.VwFW8T8FE7JAXLU_nT9gZ2xOh1L7NKFUqaw4-NlB61M",
+    "code": 201,
+    "success": "updated sucessfully"
+}
+ ```
+ Error 401:
+ <br> Incorrect password
+ ```
+ {
+    "code": 401,
+    "failed": "Incorrect password!"
+}
+ ```
+ Error 401:
+ <br>No user with this username 
+  ```
+ {
+    "code": 401,
+    "failed": "No user with this name!"
+}
+ ```
+<p id ="api_3"> <h3> GET /cats </h3>
+
+An API endpoint to get an array of cats (birthdate,breed, username, id, imageUrl, name) matching that criteria, sorted by lastSeenAt.
+Parameters:
+<br> Optional
+<ul>
+<li> id: String
+<li> name: String
+<li> username: String
+ Success:
+ 
+ 
+ Error:
+ 
+ </p>
+<p id ="api_4"> <h3> GET /cats/random </h3>
+Usage: <a href="#"> https://www.xyz.com/cat/login</a>
+<br>No parameters required
 Success:
 
 
@@ -96,3 +150,4 @@ If there are no records in the database
 }
 
 ```
+</p>
