@@ -94,7 +94,7 @@ An API endpoint to login with an username and password.
  ```
 <p id ="api_3"> <h3> GET /cats </h3>
 An API endpoint to get an array of cats (birthdate,breed, username, id, imageUrl, name) matching that criteria, sorted by lastSeenAt.
-<br>Usage: <a href="#"> https://www.xyz.com/cats</a>
+Usage: <a href="#"> https://www.xyz.com/cats</a>
 <br>Parameters:
 <br> Optional
 <ul>
