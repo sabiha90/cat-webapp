@@ -32,9 +32,8 @@ A web application for saving and retrieving cat details.
  The application by default will run at the port 3000.
 
 <p id="point_2"><h2> Description of API endpoints </h2> </p>
-
 <p id="api_1">  <h3> POST /cat/register </h3> </p>
-Usage:<a href="#"> https://www.xyz.com/cat/register </a>
+<br>Usage:<a href="#"> https://www.xyz.com/cat/register </a>
 <br>An API endpoint to save the details of cat in the database.
 <br>POST request parameters
 <br>Required:
@@ -54,7 +53,7 @@ Response
 Success :
 </p>
 <p id ="api_2"> <h3> POST /cat/login </h3>
-Usage: <a href="#"> https://www.xyz.com/cat/login</a>
+<br>Usage: <a href="#"> https://www.xyz.com/cat/login</a>
 <br>
 An API endpoint to login with an username and password.
 <br>It will return an Auth Token and update the lastSeenAt field of the database.
@@ -93,19 +92,20 @@ An API endpoint to login with an username and password.
 }
  ```
 <p id ="api_3"> <h3> GET /cats </h3>
-An API endpoint to get an array of cats (birthdate,breed, username, id, imageUrl, name) matching that criteria, sorted by lastSeenAt.
-Usage: <a href="#"> https://www.xyz.com/cats</a>
-<br>Parameters:
+<br>Usage: <a href="#"> https://www.xyz.com/cats</a>
+<br>An API endpoint to get an array of cats (birthdate,breed, username, id, imageUrl, name) matching that criteria, sorted by lastSeenAt.
+<br>GET Request Parameters
 <br> Optional
 <ul>
 <li> id: String
 <li> name: String
 <li> username: String
 </ul>
- 
+<br> Response
 </p>
 <p id ="api_4"><h3> GET /cats/random </h3>
 <br>Usage: <a href="#"> https://www.xyz.com/cats/random</a>
+<br> Get the imageUrl, name and breed of a random cat
 <br>No parameters required.
 
 <li>Success 201: Display details of a random cat
