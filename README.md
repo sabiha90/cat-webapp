@@ -8,9 +8,7 @@ The documentation consists of:
  <li> <a href="#point_2">Description of API endpoints</a>
 </ol>
 
-<p id="point_1"
-
-> 1. Getting started with the Application
+<p id="point_1"> 1. Getting started with the Application
  Tools required to run the application
        <ol>
        <li> A running version of Node.js. Check this <a href = "https://nodejs.org/en/download/package-manager/"> link </a> for instructions for installation of Node.js
@@ -40,6 +38,20 @@ The documentation consists of:
 Usage: <a href="#"> https://www.xyz.com/cat/register
 API endpoint to save the details of cat in the database.
 Parameters sent with the post request:
+ Required:
+<ul>
+ <li>name: String
+ <li>password: String
+ <li>username: String
+ <li>weight: Float
+ </ul>
+
+ Optional:
+  <ul>
+ <li> birthdate:Date
+ <li>breed: String?
+ <li> imageUrl: String?
+ </ul>
 
 </p>
 
@@ -47,3 +59,4 @@ Parameters sent with the post request:
 <p id ="api_2"> <h3> POST /cat/login </h3></p>
 <p id ="api_3"> <h3> GET /cats </h3></p>
 <p id ="api_4"> <h3> GET /cats/random </h3></p>
+
