@@ -33,10 +33,9 @@ A web application for saving and retrieving cat details.
 
 <p id="point_2"><h2> Description of API endpoints </h2> </p>
 
-<p id="api_1">  <h4> POST /cat/register </h4> </p>
+<p id="api_1">  <h3> POST /cat/register </h3> </p>
 Usage:<a href="#"> https://www.xyz.com/cat/register </a>
-<br>
-An API endpoint to save the details of cat in the database.
+<br>An API endpoint to save the details of cat in the database.
 <br>POST request parameters
 <br>Required:
 <ul>
@@ -54,7 +53,7 @@ An API endpoint to save the details of cat in the database.
 Response
 Success :
 </p>
-<p id ="api_2"> <h4> POST /cat/login </h4>
+<p id ="api_2"> <h3> POST /cat/login </h3>
 Usage: <a href="#"> https://www.xyz.com/cat/login</a>
 <br>
 An API endpoint to login with an username and password.
@@ -93,10 +92,10 @@ An API endpoint to login with an username and password.
     "failed": "No user with this name!"
 }
  ```
-<p id ="api_3"> <h4> GET /cats </h4>
+<p id ="api_3"> <h3> GET /cats </h3>
 An API endpoint to get an array of cats (birthdate,breed, username, id, imageUrl, name) matching that criteria, sorted by lastSeenAt.
-Usage: <a href="#"> https://www.xyz.com/cats</a>
-Parameters:
+<br>Usage: <a href="#"> https://www.xyz.com/cats</a>
+<br>Parameters:
 <br> Optional
 <ul>
 <li> id: String
@@ -105,9 +104,8 @@ Parameters:
 </ul>
  
 </p>
-<p id ="api_4"><h4> GET /cats/random </h4>
-Usage: <a href="#"> https://www.xyz.com/cats/random</a>
-
+<p id ="api_4"><h3> GET /cats/random </h3>
+<br>Usage: <a href="#"> https://www.xyz.com/cats/random</a>
 <br>No parameters required.
 
 <li>Success 201: Display details of a random cat
