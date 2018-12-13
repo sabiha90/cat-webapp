@@ -145,6 +145,12 @@ Usage: <a href="#"> https://www.xyz.com/cats/random</a>
 ```
 </p>
 <p id="point_3"> <h2> Deployment </h2> </p>
+Deployed using <a href="https://docs.aws.amazon.com/quickstarts/latest/webapp/welcome.html?icmpid=docs_eb_console_new"> Amazon ElasticBeanstalk </a> and RDS 
+<li> Url: 
+
 <p id="point_4"> <h2> Built With </h2> </p>
+<li> jsonwebtoken: To generate AuthToken
+<li> validator: To validate username
+<li> password-hash : To encrypt the password
 <p id="point_5"> <h2> Authors </h2> </p>
 <li> Sabiha Hussain Barlaskar
