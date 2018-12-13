@@ -1,11 +1,12 @@
 # cat-webapp
 A web application for saving and retrieving cat details.
 <br>
-The documentation consists of:
-<html>
 <ol>
  <li> <a href="#point_1">Getting started</a>
  <li> <a href="#point_2">Description of API endpoints</a>
+ <li> <a href="#point_3">Deployment </a>
+ <li> <a href="#point_4">Built With <a>
+ <li> <a href="#point_5">Authors</a>
 </ol>
 
 <p id="point_1"> 1. Getting started with the Application
@@ -110,8 +111,10 @@ Parameters:
 </p>
 <p id ="api_4"><h4> GET /cats/random </h4>
 Usage: <a href="#"> https://www.xyz.com/cats/random</a>
+
 <br>No parameters required.
-Success 201: Display details of a random cat
+
+<br>Success 201: Display details of a random cat
 
 ```
 {
