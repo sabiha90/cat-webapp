@@ -45,7 +45,7 @@ A web application for saving and retrieving cat details.
  </ul>
  Optional:
   <ul>
- <li> birthdate:Date
+ <li> birthdate:Date (YYYY-MM-DD)
  <li>breed: String?
  <li> imageUrl: String?
  </ul>
