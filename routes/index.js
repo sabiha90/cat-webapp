@@ -1,9 +1,13 @@
 var express = require('express');
 var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+var bodyParser = require('body-parser');
+var cat_controller = require('./controllers/cat_controller');
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.json());
+router.get('/', cat_controller.home_page);
+router.post('/cat/register', cat_controller.register_cat);
+router.post('/cat/login', cat_controller.login_user);
+router.get('/cats',cat_controller.display_cat_details);
+router.get('/cats/random',cat_controller.display_random_cat);
 
 module.exports = router;
