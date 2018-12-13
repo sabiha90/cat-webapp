@@ -104,10 +104,9 @@ Parameters:
 <li> id: String
 <li> name: String
 <li> username: String
- Success:
+Success:
  
- 
- Error:
+Error:
  
 </p>
 
