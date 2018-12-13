@@ -35,7 +35,7 @@ The documentation consists of:
  <a href = "#api_4"><h3> GET /cats/random </h3> </a>
 
 <p id="api_1">  <h3> POST /cat/register </h3> 
-Usage: <a href="#"> https://www.xyz.com/cat/register
+Usage: <a href="#"> https://www.xyz.com/cat/register</a>
 API endpoint to save the details of cat in the database.
 Parameters sent with the post request:
  Required:
