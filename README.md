@@ -95,8 +95,8 @@ Response
 
  ```
 </p>
-<p id ="api_2"> <h3> POST /cat/login </h3>
-<br>Usage: <a href="#"> https://www.xyz.com/cat/login</a>
+<p id ="api_2"> <h3> POST /cat/login </h3></p>
+Usage: <a href="#"> https://www.xyz.com/cat/login</a>
 <br>
 An API endpoint to login with an username and password.
 <br>It will return an Auth Token and update the lastSeenAt field of the database.
