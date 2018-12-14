@@ -174,7 +174,7 @@ An API endpoint to login with an username and password.
  {
     "code": 401,
     "auth": false,
-    "message": "No token provided."
+    "error": "No token provided."
 }
  ```
  
