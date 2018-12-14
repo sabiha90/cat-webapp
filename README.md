@@ -122,7 +122,7 @@ An API endpoint to login with an username and password.
  ```
  {
     "code": 401,
-    "failed": "Incorrect password!"
+    "error": "Incorrect password!"
 }
  ```
  <li>Error 401: No user with this username 
@@ -130,7 +130,7 @@ An API endpoint to login with an username and password.
   ```
  {
     "code": 401,
-    "failed": "No user with this name!"
+    "error": "No user with this name!"
 }
  ```
 <p id ="api_3"> <h3> GET /cats </h3>
@@ -148,7 +148,7 @@ An API endpoint to login with an username and password.
  
 ```
  {
-    "Success": 201,
+    "code": 201,
     "results": [
         {
             "birthdate": "1990-05-04T07:00:00.000Z",
@@ -183,7 +183,7 @@ An API endpoint to login with an username and password.
  ```
  {
    "code":500, 
-   "Error": 'Failed to authenticate token.Invalid token!'
+   "error": 'Failed to authenticate token.Invalid token!'
  }
  ```
 </p>
@@ -196,7 +196,7 @@ An API endpoint to login with an username and password.
 
 ```
 {
-    "Success": 201,
+    "code": 201,
     "results": [
         {
             "imgUrl": url,
@@ -211,8 +211,8 @@ An API endpoint to login with an username and password.
 
 ```
 {
-    "Failure": 400,
-    "Error": "No records found!"
+    "code": 400,
+    "error": "No records found!"
 }
 ```
 
