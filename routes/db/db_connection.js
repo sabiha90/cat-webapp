@@ -1,7 +1,7 @@
 var express = require('express');
 //var router = express.Router();
 var mysql = require('mysql');
-
+/*
 var connection = mysql.createConnection({
   host     : process.env.RDS_HOSTNAME,
   user     : process.env.RDS_USERNAME,
@@ -9,8 +9,8 @@ var connection = mysql.createConnection({
   port     : process.env.RDS_PORT,
   database : 'cat_db'
 });
+*/
 
-/*
 var connection=mysql.createPool({
  
 host:'localhost',
@@ -19,5 +19,5 @@ host:'localhost',
  database:'cats'
  
 });
-*/
+
 module.exports = connection;
