@@ -145,6 +145,7 @@ An API endpoint to login with an username and password.
 </ul>
 <br> Response
 <li> Success 201: Retrieved cat details successfully
+ 
 ```
  {
     "Success": 201,
