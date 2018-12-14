@@ -50,7 +50,13 @@ A web application for saving and retrieving cat details.
  <li> imageUrl: String?
  </ul>
 Response
-Success :
+<li>Success 201 : User added successfully
+ 
+```
+"code":201,
+"success": "User added successfully"
+```
+<li> Error 500: User already exists
 </p>
 <p id ="api_2"> <h3> POST /cat/login </h3>
 <br>Usage: <a href="#"> https://www.xyz.com/cat/login</a>
