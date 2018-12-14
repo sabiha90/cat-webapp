@@ -14,7 +14,7 @@ A web application for saving and retrieving cat details. The application has GET
 <p> <h3>Prerequisites </h3> </p>
        <ol>
        <li> A running version of Node.js. Check this <a href = "https://nodejs.org/en/download/package-manager/"> link </a> for instructions for installation of Node.js
-       <li>MySql version
+       <li>MySql version 5.6.40
    </ol>
 <p> <h3> Running the application </h3> </p>                                                                                              
  Clone this repository into your local machine
