@@ -233,10 +233,6 @@ Usage: <a href="#"> https://www.xyz.com/cats</a>
 |   |--db
 |       |--db_connection.js
 |       |--database_schema.sql
-|--views
-|   |--index.jade
-|   |--error.jade
-|   |--layout.jade
 
 ```
 <br> The routes are present in the index.js file and are forwarded to the controller functions present in the controllers folder.
