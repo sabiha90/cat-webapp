@@ -32,18 +32,14 @@ exports.register_cat = function(req, res){
       "addedAt": today
     }
   
-  
-    console.log(cat_properties.username);
     //check if there is already a user with the same username
     db.query('select username from cat_details where username =?',cat_properties.username,function (error, results, fields) {
-    console.log(this.sql);
     if(error)
     {
       res.send({
                 "code":500,
                 "error": "An error occurred!"
                 });
-      console.log("first",error);
     }
     else if(results.length>0) //if there is a user, throw an error
     {
@@ -73,7 +69,6 @@ exports.register_cat = function(req, res){
 //module for logging in a user and return an authToken
 exports.login_user = function(req,res)
 { 
-  console.log('inside login');
 
   var user_details = {
     "username" : req.body.username,
@@ -87,7 +82,6 @@ exports.login_user = function(req,res)
   }
   //check if there is a user with the entered username
   db.query('SELECT * FROM cat_details WHERE username = ?',user_details.username, function (error, results, fields) {
-    console.log(this.sql);
     if(error)
      {
        res.send({
@@ -101,11 +95,9 @@ exports.login_user = function(req,res)
         {//comparing the password with the password retrieved from the database
           if(passwordHash.verify(user_details.password, results[0].password) || user_details.password == results[0].password)
           { 
-            console.log("logged in with password");
             db.query('Update cat_details set lastSeenAt = ? where username = ? and password = ?',[user_details.lastSeenAt,user_details.username,passwordHash.generate(user_details.password)], function (error, results, fields) {
             if(error)
               {
-                console.log("error ocurred",error);
                 res.send({
                 "code":500,
                 "error":"error ocurred"
@@ -117,7 +109,6 @@ exports.login_user = function(req,res)
               var token = jwt.sign({ id: results._id }, config.secret, {
               expiresIn: 86400 // expires in 24 hours
               });
-              console.log('Updated with'+user_details.lastSeenAt);
               res.send({
               "authoToken": token,
                "code":201,
@@ -174,7 +165,6 @@ exports.display_cat_details =  function(req,res)
         db.query("select birthdate, breed, username, id, imgUrl, name from cat_details where id = ? or name = ? or username=? order by lastSeenAt",[requested_cat_properties.id,requested_cat_properties.name,requested_cat_properties.username],
           function(error,results)
           {
-            console.log(this.sql);
             if(error)
             {
               res.send({
@@ -204,7 +194,6 @@ exports.display_cat_details =  function(req,res)
   exports.display_random_cat = function(req,res)
   {
     db.query("SELECT imgUrl, name, breed FROM cat_details ORDER BY RAND() LIMIT 1",function(err,results){
-      console.log(this.sql);
       if(err)
       {
         res.send({"error": 500, "Error":  "An error occurred"});
