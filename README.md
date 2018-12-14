@@ -1,5 +1,5 @@
 # cat-webapp
-A web application for saving and retrieving cat details.
+A web application for saving and retrieving cat details. The application has GET and POST API endpoints.
 <br>
 <ol>
  <li> <a href="#point_1">Getting started</a>
@@ -35,7 +35,7 @@ A web application for saving and retrieving cat details.
 <p id="api_1">  <h3> POST /cat/register </h3> </p>
 <br>Usage:<a href="#"> https://www.xyz.com/cat/register </a>
 <br>An API endpoint to save the details of cat in the database.
-<br>POST request parameters
+<br>POST Request parameters
 <br>Required:
 <ul>
  <li>name: String
@@ -53,17 +53,53 @@ Response
 <li>Success 201 : User added successfully
  
 ```
-"code":201,
-"success": "User added successfully"
+{
+  "code":201,
+  "success": "User added successfully"
+ }
 ```
 <li> Error 500: User already exists
+ 
+ ```
+ {
+   "code": 400",
+   "error":"user already exists!"
+ }
+ ```
+ <li> Error : Invalid credentials
+ 
+ ```
+ {
+    "errors": [
+        {
+            "location": "body",
+            "param": "username",
+            "value": "sabiha23",
+            "msg": "Invalid username!"
+        },
+        {
+            "location": "body",
+            "param": "password",
+            "value": "pass",
+            "msg": "Minimum length of password is 8"
+        },
+        {
+            "location": "body",
+            "param": "breed",
+            "value": "cat_breed_1",
+            "msg": "Must contain only letters (a-zA-Z"
+        }
+    ]
+}
+
+ ```
 </p>
 <p id ="api_2"> <h3> POST /cat/login </h3>
 <br>Usage: <a href="#"> https://www.xyz.com/cat/login</a>
 <br>
 An API endpoint to login with an username and password.
 <br>It will return an Auth Token and update the lastSeenAt field of the database.
-<br>POST request parameters
+<br>POST Request parameters
 <br>Required:
 <ul>
     <li> username: String
@@ -127,17 +163,8 @@ An API endpoint to login with an username and password.
         }
     ]
 }
-
 ```
 
-<li>Error 500: If unable to connect to the database or there is a syntax error in the mysql query
-
-```
-{
-    "Failure": 500,
-    "Error": "An error occurred"
-}
-```
 <li>Error 400: If there are no records in the database
 
 ```
@@ -145,8 +172,8 @@ An API endpoint to login with an username and password.
     "Failure": 400,
     "Error": "No records found!"
 }
-
 ```
+
 </p>
 <p id="point_3"> <h2> Deployment </h2> </p>
 Deployed using <a href="https://docs.aws.amazon.com/quickstarts/latest/webapp/welcome.html?icmpid=docs_eb_console_new"> Amazon ElasticBeanstalk </a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html"> RDS </a>
