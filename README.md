@@ -219,7 +219,8 @@ An API endpoint to login with an username and password.
 
 </p>
 
-<p id="point_5"><h2> Directory structure </h2> </p>
+<p id="point_3"><h2> Directory structure </h2> </p>
+
 ```
 |app.js
 |package.json
@@ -238,9 +239,9 @@ An API endpoint to login with an username and password.
 |   |--layout.jade
 
 ```
-<p> The routes are present in the index.js file and are forwarded to the controller functions present in the controllers folder
-<p> The db folder consists of database schema in the db_connection.js file and the database model in the database_schema.sql
-<p> The config folder consists of the config.js file for the authToken generation.
+<br> The routes are present in the index.js file and are forwarded to the controller functions present in the controllers folder.
+<br> The db folder consists of database schema in the db_connection.js file and the database model in the database_schema.sql
+<br> The config folder consists of the config.js file for the authToken generation.
 
 <p id="point_4"> <h2> Deployment </h2> </p>
 Deployed using <a href="https://docs.aws.amazon.com/quickstarts/latest/webapp/welcome.html?icmpid=docs_eb_console_new"> Amazon ElasticBeanstalk </a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html"> RDS </a>
