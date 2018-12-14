@@ -59,7 +59,7 @@ Response
   "success": "User added successfully"
  }
 ```
-<li> Error 500: User already exists
+<li> Error 400: User already exists
  
  ```
  {
