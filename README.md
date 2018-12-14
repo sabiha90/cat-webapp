@@ -249,7 +249,7 @@ Deployed using <a href="https://docs.aws.amazon.com/quickstarts/latest/webapp/we
 
 <p id="point_5"> <h2> Built With </h2> </p>
 <li> jsonwebtoken: To generate AuthToken
-<li> validator: To validate username
+<li> express-validator: To validate input parameters like birthdate, username, password etc 
 <li> password-hash : To encrypt the password
 <p id="point_6"> <h2> Authors </h2> </p>
 <li> Sabiha Hussain Barlaskar
