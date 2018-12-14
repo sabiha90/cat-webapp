@@ -34,7 +34,7 @@ A web application for saving and retrieving cat details. The application has GET
 
 <p id="point_2"><h2> Description of API endpoints </h2> </p>
 <p id="api_1">  <h3> POST /cat/register </h3> </p>
-<br>Usage:<a href="#"> https://www.xyz.com/cat/register </a>
+Usage:<a href="#"> https://www.xyz.com/cat/register </a>
 <br>An API endpoint to save the details of cat in the database.
 <br>POST Request parameters
 <br>Required:
@@ -134,8 +134,8 @@ An API endpoint to login with an username and password.
     "error": "No user with this name!"
 }
  ```
-<p id ="api_3"> <h3> GET /cats </h3>
-<br>Usage: <a href="#"> https://www.xyz.com/cats</a>
+<p id ="api_3"> <h3> GET /cats </h3> </p>
+Usage: <a href="#"> https://www.xyz.com/cats</a>
 <br>An API endpoint to get an array of cats (birthdate,breed, username, id, imageUrl, name) matching that criteria, sorted by lastSeenAt.
 <br>GET Request Parameters
 <br> Optional
