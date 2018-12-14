@@ -144,6 +144,47 @@ An API endpoint to login with an username and password.
 <li> username: String
 </ul>
 <br> Response
+<li> Success 201: Retrieved cat details successfully
+```
+ {
+    "Success": 201,
+    "results": [
+        {
+            "birthdate": "1990-05-04T07:00:00.000Z",
+            "breed": "cat_1",
+            "username": "j90",
+            "id": 1,
+            "imgUrl": null,
+            "name": "John"
+        },
+        {
+            "birthdate": "1990-05-13T07:00:00.000Z",
+            "breed": "cat_3",
+            "username": "s90",
+            "id": 4,
+            "imgUrl": null,
+            "name": "sabiha"
+        },
+```
+
+<li> Error 401: No authorization token was provide
+ 
+ ```
+ {
+    "code": 401,
+    "auth": false,
+    "message": "No token provided."
+}
+ ```
+ 
+<li> Error 500: Invalid auth Token
+ 
+ ```
+ {
+   "code":500, 
+   "Error": 'Failed to authenticate token.Invalid token!'
+ }
+ ```
 </p>
 <p id ="api_4"><h3> GET /cats/random </h3>
 <br>Usage: <a href="#"> https://www.xyz.com/cats/random</a>
