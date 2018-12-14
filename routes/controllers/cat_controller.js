@@ -6,8 +6,7 @@ var jwt = require('jsonwebtoken');
 var bcrypt = require('bcryptjs');
 var config = require('../config/config');
 var Promise = require('promise');
-
-
+const { check, validationResult } = require('express-validator/check');
 //render the home page with the GET request
 exports.home_page = function(req, res, next) {
   res.render('index', { title: 'Welcome to Cat World!' });
@@ -17,6 +16,10 @@ exports.home_page = function(req, res, next) {
 exports.register_cat = function(req, res){
     var today = new Date(); // function to retrieve the date
     //storing the parameters in an object
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
     var cat_properties = {
       "name": req.body.name,
       "username": req.body.username,
@@ -28,8 +31,8 @@ exports.register_cat = function(req, res){
       "weight": req.body.weight,
       "addedAt": today
     }
-    //validate the fields and throw error if there is an error
-    validate(cat_properties,res,req);
+  
+  
     console.log(cat_properties.username);
     //check if there is already a user with the same username
     db.query('select username from cat_details where username =?',cat_properties.username,function (error, results, fields) {
@@ -44,7 +47,7 @@ exports.register_cat = function(req, res){
     }
     else if(results.length>0) //if there is a user, throw an error
     {
-      res.send({"message":"user already exists!"});
+      res.send({"code": 400,"error":"user already exists!"});
     }
     else
     {
@@ -84,16 +87,16 @@ exports.login_user = function(req,res)
   }
   //check if there is a user with the entered username
   db.query('SELECT * FROM cat_details WHERE username = ?',user_details.username, function (error, results, fields) {
+    console.log(this.sql);
     if(error)
      {
        res.send({
         "code":400,
-        "failed":"error ocurred"
+        "error":"error ocurred"
       });
      }
     else
      {
-       console.log(results.length);
        if(results.length > 0)
         {//comparing the password with the password retrieved from the database
           if(passwordHash.verify(user_details.password, results[0].password) || user_details.password == results[0].password)
@@ -105,7 +108,7 @@ exports.login_user = function(req,res)
                 console.log("error ocurred",error);
                 res.send({
                 "code":500,
-                "failed":"error ocurred"
+                "error":"error ocurred"
                 });
               }
             else
@@ -128,7 +131,7 @@ exports.login_user = function(req,res)
           {
               res.send({
                 "code":401,
-                "failed":"Incorrect password!"
+                "error":"Incorrect password!"
                 });
           }
          }
@@ -136,7 +139,7 @@ exports.login_user = function(req,res)
          {
             res.send({
                 "code":401,
-                "failed":"No user with this name!"
+                "error":"No user with this name!"
                 });
          }
       }
@@ -157,12 +160,12 @@ exports.display_cat_details =  function(req,res)
 
   var token = req.header('authToken');
   if (!token) //If there is no token
-    return res.status(401).send({ auth: false, message: 'No token provided.' });
+    return res.status(401).send({ auth: false, "error": 'No token provided.' });
   //If the token do not match
   jwt.verify(token, config.secret, function(err, decoded) {
     if (err) {
       //return res.status(500).send({ auth: false, message: 'Failed to authenticate token.Invalid token!' });}
-    res.send({"code":500, "message": 'Failed to authenticate token.Invalid token!'})
+    res.send({"code":500, "error": 'Failed to authenticate token.Invalid token!'})
   }
     else
     {
@@ -176,7 +179,7 @@ exports.display_cat_details =  function(req,res)
             {
               res.send({
                 "code": 400,
-                "Failure": "Error occured"
+                "error": "Error occured"
               });
             }
             else if(results.length>0)
@@ -190,7 +193,7 @@ exports.display_cat_details =  function(req,res)
             {
               res.send({
                 "code": 400,
-                "Failure": "Invalid search criteria!"
+                "error": "Invalid search criteria!"
               });
             }
         });
@@ -204,36 +207,21 @@ exports.display_cat_details =  function(req,res)
       console.log(this.sql);
       if(err)
       {
-        res.send({"Failure": 500, "Error":  "An error occurred"});
+        res.send({"error": 500, "Error":  "An error occurred"});
       }
       else
       {
         if(results.length<0){
-          res.send({"Failure": 400, "Error":  "No records found!"});
+          res.send({"error": 400, "Error":  "No records found!"});
           }
           else
           {
-            res.send({"Success": 201, results});
+            res.send({"success": 201, results});
           }
         }
     });
     
   }
-  //function for validation of input parameters
   
-  function validate(cat_properties,res,req){
   
-  if(cat_properties.name === undefined)
-  {
-    res.send({"message":"Name is missing!"});
-  }
-  if(req.body.password.length<8)
-  {
-    res.send({"message":"Password should be more than 8 characters!"});
-  }
-  if(!validator.isEmail(cat_properties.username))
-  {
-    res.send({"message":"Invalid user name"});
-  }
-}
-
+  

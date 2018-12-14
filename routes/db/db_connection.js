@@ -10,5 +10,4 @@ var connection = mysql.createConnection({
   database : 'cat_db'
 });
 
-
 module.exports = connection;
